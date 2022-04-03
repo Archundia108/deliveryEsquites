@@ -9,12 +9,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VerOrdenesComponent } from './pages/ver-ordenes/ver-ordenes.component';
 import { RegistrarOrdenComponent } from './pages/registrar-orden/registrar-orden.component';
+import { RegistrarComponent } from './pages/registrar/registrar.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ValidarEmailComponent } from './pages/validar-email/validar-email.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VerOrdenesComponent,
-    RegistrarOrdenComponent
+    RegistrarOrdenComponent,
+    RegistrarComponent,
+    LoginComponent,
+    ValidarEmailComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

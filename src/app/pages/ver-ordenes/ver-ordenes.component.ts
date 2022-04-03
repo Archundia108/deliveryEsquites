@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Orden } from 'src/app/models/orden';
+import { AuthService } from 'src/app/services/auth.service';
 import { OrdenService } from 'src/app/services/orden.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class VerOrdenesComponent implements OnInit {
   ordenes:Orden[] = [];
   orden = new Orden();
 
-  constructor(private ordenService:OrdenService) { }
+  constructor(private ordenService:OrdenService, public authService:AuthService) { }
 
   ngOnInit(): void {
     this.ordenService.getOrdenes().subscribe(data => {
