@@ -1,8 +1,12 @@
 <h1 class="display-4">Ingrese la información de su orden</h1>
 <br>
 <div class="col-sm-5">
-    <p><strong>Ingredientes:</strong></p>
-    <div class="row">
+    <p>
+        <strong>Ingredientes:</strong>
+        <textarea class="form-control" [(ngModel)]="orden.ingredientes"></textarea>
+    </p>
+
+    <!-- <div class="row">
         <div class="col">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="Mayonesa" id="mayonesaCheck">
@@ -37,12 +41,11 @@
                 </label>
             </div>
         </div>
-    </div>
-    <br>
+    </div> 
+    <br> -->
     <p>
         <label><strong>Tamaño de la orden:</strong></label>
-        <select class="form-select">
-            <option selected>Seleccione el tamaño</option>
+        <select class="form-select" [(ngModel)]="orden.tamanio">
             <option value="1">Chico</option>
             <option value="2">Mediano</option>
             <option value="3">Grande</option>
@@ -50,17 +53,17 @@
     </p>
     <p>
         <label><strong>Persona que hace el pedido:</strong></label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" [(ngModel)]="orden.personaOrdena">
     </p>
     <p>
         <label><strong>Dirección de entrega:</strong></label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" [(ngModel)]="orden.direccionEntrega">
     </p>
 
     <table>
         <tr>
             <td>
-                <button type="button" class="btn btn-success">
+                <button type="button" class="btn btn-success" (click)="this.registrarOrden()">
                     Realizar el pedido
                 </button>
             </td>

@@ -3,7 +3,7 @@ export class Orden{
     ingredientes!: string;
     personaOrdena!: string;
     direccionEntrega!: string;
-    tamanio!: string;
+    tamanio!: any;
     precio!: number;
-    status!: string;
+    status!: any;
 }
