@@ -1,0 +1,69 @@
+<h1 class="display-4">Ingrese la información de su orden</h1>
+<br>
+<div class="col-sm-5">
+    <p><strong>Ingredientes:</strong></p>
+    <div class="row">
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Mayonesa" id="mayonesaCheck">
+                <label class="form-check-label" for="mayonesaCheck">
+                    Mayonesa
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Queso" id="quesoCheck">
+                <label class="form-check-label" for="quesoCheck">
+                    Queso
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Chile" id="chileCheck">
+                <label class="form-check-label" for="chileCheck">
+                    Chile
+                </label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Crema" id="cremaCheck">
+                <label class="form-check-label" for="cremaCheck">
+                    Crema
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Limon" id="limonCheck">
+                <label class="form-check-label" for="limonCheck">
+                    Limón
+                </label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p>
+        <label><strong>Tamaño de la orden:</strong></label>
+        <select class="form-select">
+            <option selected>Seleccione el tamaño</option>
+            <option value="1">Chico</option>
+            <option value="2">Mediano</option>
+            <option value="3">Grande</option>
+        </select>
+    </p>
+    <p>
+        <label><strong>Persona que hace el pedido:</strong></label>
+        <input type="text" class="form-control">
+    </p>
+    <p>
+        <label><strong>Dirección de entrega:</strong></label>
+        <input type="text" class="form-control">
+    </p>
+
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-success">
+                    Realizar el pedido
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

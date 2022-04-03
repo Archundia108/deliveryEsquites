@@ -1,7 +1,7 @@
-<table class="table">
+<table class="table table-hover">
     <thead>
-        <tr>
-            <th colspan="6">Pedidos de esquites</th>
+        <tr class="table-dark">
+            <th colspan="8">LISTADO DE PEDIDOS</th>
         </tr>
         <tr>
             <th>Persona que ordena</th>
@@ -10,9 +10,11 @@
             <th>Tamaño</th>
             <th>Precio</th>
             <th>Estado del pedido</th>
+            <th>Confirmar</th>
+            <th>Cancelar</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="align-middle">
         <tr *ngFor="let orden of ordenes">
             <td>{{ orden.personaOrdena }}</td>
             <td>{{ orden.direccionEntrega }}</td>
@@ -20,6 +22,16 @@
             <td>{{ orden.tamanio }}</td>
             <td>${{ orden.precio }}</td>
             <td>{{ orden.status }}</td>
+            <td class="align-middle">
+                <button type="submit" class="btn btn-success">
+                    &#10003;
+                </button>
+            </td>
+            <td>
+                <button type="submit" class="btn btn-danger">
+                    &#10005;
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>

@@ -8,11 +8,13 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VerOrdenesComponent } from './pages/ver-ordenes/ver-ordenes.component';
+import { RegistrarOrdenComponent } from './pages/registrar-orden/registrar-orden.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VerOrdenesComponent
+    VerOrdenesComponent,
+    RegistrarOrdenComponent
   ],
   imports: [
     BrowserModule,
