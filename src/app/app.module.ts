@@ -13,6 +13,7 @@ import { RegistrarComponent } from './pages/registrar/registrar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ValidarEmailComponent } from './pages/validar-email/validar-email.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { MenuComponent } from './pages/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     RegistrarComponent,
     LoginComponent,
     ValidarEmailComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

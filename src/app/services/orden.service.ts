@@ -1,5 +1,6 @@
+import { Reference } from '@angular/compiler/src/render3/r3_ast';
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Orden } from '../models/orden';
 
 
@@ -35,5 +36,9 @@ export class OrdenService {
 
   updateOrden(orden:Orden){
     this.firestore.doc('orden/'+orden.id).update(orden);
+  }
+
+  deleteOrden(ordenId:string){
+    this.firestore.doc('orden/'+ordenId).delete();
   }
 }

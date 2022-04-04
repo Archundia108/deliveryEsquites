@@ -1,4 +1,4 @@
-<div class="displayTable">
+<!-- <div class="displayTable">
     <div class="displayTableCell">
 
         <div class="authBlock">
@@ -19,5 +19,23 @@
         </div>
 
 
+    </div>
+</div> -->
+
+<div style="display: flex; justify-content: center; margin-top: 16%;">
+    <div class="card border-success">
+        <div class="card-header bg-success text-white">
+            <h1 class="h1">GRACIAS POR REGISTRARTE</h1>
+        </div>
+        <div class="card-body bg-light">
+            <div class="form-text" *ngIf="authService.userState as user">
+                <p class="text-center">Se envió un correo de confirmación a <strong>{{user.email}}</strong>.</p>
+            </div>
+            <button type="button" class="btn btn-block btn-success" (click)="authService.sendVerificationMail()">Reenviar correo de verificación</button>
+            <div class="form-text">
+                <a class="redirect" routerLink="/login">Iniciar sesión</a>
+            </div>
+        </div>
+        <!-- <img src="https://www.mylatinatable.com/wp-content/uploads/2019/07/Esquites-1.jpg" style="max-width: 200px;" class="mb-2"> -->
     </div>
 </div>

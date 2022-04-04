@@ -42,7 +42,7 @@ export class AuthService {
     return this.fireAuth.signInWithEmailAndPassword(email,password)
       .then((result) => {
         this.setUserData(result.user).then(() => {
-          this.router.navigate(['show-orden']);
+          this.router.navigate(['menu']);
         }) ;
       }).catch((error) => {
         window.alert(error.message)

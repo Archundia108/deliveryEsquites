@@ -26,4 +26,14 @@ export class VerOrdenesComponent implements OnInit {
     });
   }
 
+  confirmarOrden(orden:Orden){
+    this.orden = orden;
+    this.orden.status = 'status/2'
+    this.ordenService.updateOrden(this.orden);
+  }
+
+  eliminarOrden(orden:Orden){
+    this.orden = orden;
+    this.ordenService.deleteOrden(orden.id);
+  }
 }

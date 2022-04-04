@@ -1,4 +1,4 @@
-<div class="container card">
+<!-- <div class="container card">
 
     <div class="displayTable">
         <div class="displayTableCell">
@@ -29,4 +29,26 @@
 
     </div>
 
+</div> -->
+
+<div style="display: flex; justify-content: center; margin-top: 12%;">
+    <div class="card border-success">
+        <div class="card-header bg-success text-white">
+            <h1 class="h1">NUEVO USUARIO</h1>
+        </div>
+        <div class="card-body bg-light">
+            <div class="mb-3">
+                <label for="title" class="form-label">E-Mail</label>
+                <input type="email" class="form-control" placeholder="Ingresa tu correo" #userEmail required>
+            </div>
+            <div class="mb-3">
+                <label for="dev" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" placeholder="Genera tu contraseña" #userPassword required>
+            </div>
+            <button type="button" class="btn btn-success" (click)="authService.registrar(userEmail.value, userPassword.value)">Registrarse</button>
+            <div class="form-text">
+                <a class="redirect" routerLink="/login">¿Ya tienes cuenta?  Iniciar sesión</a>
+            </div>
+        </div>
+    </div>
 </div>

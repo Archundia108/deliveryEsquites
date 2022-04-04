@@ -1,50 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a href="#" class="navbar-brand">
-            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b154ee5b-a8e4-49c4-b5f0-06915ee5cf27/dbi2n87-a0591c53-2a13-4742-8a17-806dde2df297.png/v1/fill/w_1024,h_576,q_80,strp/_sfm_workshop_download__tek_raptor_model_preview_by_nikout13_dbi2n87-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvYjE1NGVlNWItYThlNC00OWM0LWI1ZjAtMDY5MTVlZTVjZjI3XC9kYmkybjg3LWEwNTkxYzUzLTJhMTMtNDc0Mi04YTE3LTgwNmRkZTJkZjI5Ny5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Zl0xjWViGp_Rr3IXADcgxBug0GGHqJ5wwl1Av7UykoM"
-                alt="Reptar" width="50" height="30" class="d-inline-block align-text-top"> DELIVERY DE ESQUITES
-        </a>
-        <span class="navbar-text">
-          <button class="btn btn-danger" (click)="authService.logout()">Cerrar sesión</button>
-        </span>
-    </div>
-</nav>
-<br>
-<app-registrar-orden></app-registrar-orden>
-<table class="table table-hover">
-    <thead>
-        <tr class="table-dark">
-            <th colspan="8">LISTADO DE PEDIDOS</th>
-        </tr>
-        <tr>
-            <th>Persona que ordena</th>
-            <th>Dirección</th>
-            <th>Ingredientes</th>
-            <th>Tamaño</th>
-            <th>Precio</th>
-            <th>Estado del pedido</th>
-            <th>Confirmar</th>
-            <th>Cancelar</th>
-        </tr>
-    </thead>
-    <tbody class="align-middle">
-        <tr *ngFor="let orden of ordenes">
-            <td>{{ orden.personaOrdena }}</td>
-            <td>{{ orden.direccionEntrega }}</td>
-            <td>{{ orden.ingredientes }}</td>
-            <td>{{ orden.tamanio }}</td>
-            <td>${{ orden.precio }}</td>
-            <td>{{ orden.status }}</td>
-            <td class="align-middle">
-                <button type="submit" class="btn btn-success">
-                    &#10003;
-                </button>
-            </td>
-            <td>
-                <button type="submit" class="btn btn-danger">
-                    &#10005;
-                </button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div style="display: flex; justify-content: center; margin: 10px;">
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th colspan="8">LISTADO DE PEDIDOS</th>
+            </tr>
+            <tr>
+                <th>Persona que ordena</th>
+                <th>Dirección</th>
+                <th>Ingredientes</th>
+                <th>Tamaño</th>
+                <th>Precio</th>
+                <th>Estado del pedido</th>
+                <th>Confirmar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody class="align-middle">
+            <tr *ngFor="let orden of ordenes">
+                <td>{{ orden.personaOrdena }}</td>
+                <td>{{ orden.direccionEntrega }}</td>
+                <td>{{ orden.ingredientes }}</td>
+                <td>{{ orden.tamanio }}</td>
+                <td>${{ orden.precio }}</td>
+                <td>{{ orden.status }}</td>
+                <td class="align-middle">
+                    <button type="submit" class="btn btn-success" (click)="confirmarOrden(orden)">
+                        &#10003;
+                    </button>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-danger" (click)="eliminarOrden(orden)">
+                        &#10005;
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
