@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//import { time } from 'console';
 import { Orden } from 'src/app/models/orden';
 import { AuthService } from 'src/app/services/auth.service';
 import { OrdenService } from 'src/app/services/orden.service';
@@ -28,7 +29,7 @@ export class VerOrdenesComponent implements OnInit {
 
   confirmarOrden(orden:Orden){
     this.orden = orden;
-    this.orden.status = 'status/2'
+    this.orden.status = 2
     this.ordenService.updateOrden(this.orden);
   }
 

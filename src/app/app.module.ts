@@ -14,6 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ValidarEmailComponent } from './pages/validar-email/validar-email.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MenuComponent } from './pages/menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

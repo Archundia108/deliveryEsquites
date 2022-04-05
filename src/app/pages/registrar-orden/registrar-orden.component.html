@@ -4,74 +4,40 @@
             <h1 class="h1">Ingrese la información de su orden</h1>
         </div>
         <div class="card-body">
-            <p>
-                <strong>Ingredientes:</strong>
-                <textarea class="form-control" [(ngModel)]="orden.ingredientes"></textarea>
-            </p>
-        
-            <!-- <div class="row">
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Mayonesa" id="mayonesaCheck">
-                        <label class="form-check-label" for="mayonesaCheck">
-                            Mayonesa
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Queso" id="quesoCheck">
-                        <label class="form-check-label" for="quesoCheck">
-                            Queso
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Chile" id="chileCheck">
-                        <label class="form-check-label" for="chileCheck">
-                            Chile
-                        </label>
-                    </div>
+            <form (ngSubmit)="onSubmit()" #ordenForm="ngForm">
+                <div class="form-group">
+                    <strong>Ingredientes:</strong>
+                    <textarea required id="ingredientes" name="ingredientes" #ingredientes="ngModel" class="form-control" [(ngModel)]="orden.ingredientes"></textarea>
+                    <div class="alert alert-danger" [hidden]="ingredientes.valid || ingredientes.pristine">Este campo es obligatorio</div>
                 </div>
-                <div class="col">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Crema" id="cremaCheck">
-                        <label class="form-check-label" for="cremaCheck">
-                            Crema
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Limon" id="limonCheck">
-                        <label class="form-check-label" for="limonCheck">
-                            Limón
-                        </label>
-                    </div>
-                </div>
-            </div> 
-            <br> -->
-            <p>
-                <label><strong>Tamaño de la orden:</strong></label>
-                <select class="form-select" [(ngModel)]="orden.tamanio">
-                    <option value="1">Chico</option>
-                    <option value="2">Mediano</option>
-                    <option value="3">Grande</option>
+
+                <div class="form-group">
+                    <label for="tamanio"><strong>Tamaño de la orden:</strong></label>
+                    <select class="form-select" id="tamanio" name="tamanio" #tamanio="ngModel" required [(ngModel)]="orden.tamanio">
+                    <option *ngFor="let tam of tamanios" [value]="tam.id">{{ tam.descripcion }}</option>
                 </select>
-            </p>
-            <p>
-                <label><strong>Persona que hace el pedido:</strong></label>
-                <input type="text" class="form-control" [(ngModel)]="orden.personaOrdena">
-            </p>
-            <p>
-                <label><strong>Dirección de entrega:</strong></label>
-                <input type="text" class="form-control" [(ngModel)]="orden.direccionEntrega">
-            </p>
-        
-            <table>
-                <tr>
-                    <td>
-                        <button type="button" class="btn btn-success" (click)="this.registrarOrden()">
-                            Realizar el pedido
-                        </button>
-                    </td>
-                </tr>
-            </table>
+                    <div class="alert alert-danger" [hidden]="tamanio.valid || tamanio.pristine">Este campo es obligatorio</div>
+
+                </div>
+                <div class="form-group">
+                    <label for="persona"><strong>Persona que hace el pedido:</strong></label>
+                    <input type="text" id="persona" name="persona" #persona="ngModel" required class="form-control" [(ngModel)]="orden.personaOrdena">
+                    <div class="alert alert-danger" [hidden]="persona.valid || persona.pristine">Este campo es obligatorio</div>
+                </div>
+                <div class="form-group">
+                    <label for="direccion"><strong>Dirección de entrega:</strong></label>
+                    <input type="text" id="direccion" name="direccion" #direccion="ngModel" required class="form-control" [(ngModel)]="orden.direccionEntrega">
+                    <div class="alert alert-danger" [hidden]="direccion.valid || direccion.pristine">Este campo es obligatorio</div>
+                </div>
+                <br>
+                <button type="button" [disabled]="!ordenForm.form.valid" class="btn btn-success" (click)="this.registrarOrden();ordenForm.reset()">
+                    Realizar el pedido
+                </button>
+                <button type="button" class="btn btn-danger" (click)="newOrden();ordenForm.reset()">
+                    Limpiar
+                </button>
+
+            </form>
         </div>
     </div>
 </div>
